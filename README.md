@@ -119,6 +119,8 @@ Here's the updated **Customization** section with similar notes for all the rele
 ### **8. Customization**
 You can customize the `sed` commands used in the `tunnel.sh` file based on your app's specific configuration needs:
 
+- You can adjust the following parameters in the script: `MAX_WAIT` maximum time to wait for the tunnel URL to be generated (default: 60 seconds). `WAIT_INTERVAL`: interval between checks for the tunnel URL (default: 2 seconds).
+
 - The following line starts the Cloudflare tunnel, forwarding traffic to your app's local server:
   ```bash
   cloudflared tunnel --url http://localhost:8000 > tunnel.log 2>&1 &
