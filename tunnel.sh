@@ -17,7 +17,7 @@ fi
 echo "Starting Cloudflare tunnel and waiting for the URL..."
 
 # Start Cloudflare tunnel in the background and capture its output
-cloudflared tunnel --url http://localhost:8006 > tunnel.log 2>&1 &
+cloudflared tunnel --url http://localhost:8000 > tunnel.log 2>&1 &
 
 # Wait for the tunnel URL to be available, with a timeout
 MAX_WAIT=60  # Maximum wait time in seconds
