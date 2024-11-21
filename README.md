@@ -119,6 +119,13 @@ Here's the updated **Customization** section with similar notes for all the rele
 ### **8. Customization**
 You can customize the `sed` commands used in the `tunnel.sh` file based on your app's specific configuration needs:
 
+- The following line starts the Cloudflare tunnel, forwarding traffic to your app's local server:
+  ```bash
+  cloudflared tunnel --url http://localhost:8000 > tunnel.log 2>&1 &
+  ```
+
+  **Note:** If your app is running on a different port, ensure that you adjust the port number accordingly (e.g., `http://localhost:3000, http://localhost:5000`). Replace `8000` with your app's correct port.
+
 - The following line updates the `APP_URL` in the `.env` file with the new Cloudflare tunnel URL:
   ```bash
   sed -i "s|^APP_URL=.*|APP_URL=$TUNNEL_URL|" $APP_ENV_FILE
